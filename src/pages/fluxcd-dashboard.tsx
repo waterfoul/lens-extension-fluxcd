@@ -197,8 +197,8 @@ export class FluxCDDashboard extends React.Component<{ extension: Renderer.LensE
 
     const getStatusClassName = (obj: any) => {
       if (obj.spec.suspend) return 'statusSuspended';
-      if (obj.status?.conditions.find((c: any) => c.type === "Ready").status === "True") return 'statusReady';
-      if (obj.status?.conditions.find((c: any) => c.type === "Ready").status === "False") return 'statusNotReady';
+      if (obj.status?.conditions?.find((c: any) => c.type === "Ready").status === "True") return 'statusReady';
+      if (obj.status?.conditions?.find((c: any) => c.type === "Ready").status === "False") return 'statusNotReady';
       return 'statusInProgress';
     }
 
@@ -281,7 +281,7 @@ export class FluxCDDashboard extends React.Component<{ extension: Renderer.LensE
                     <DrawerItem name="URL">{s.spec.url}</DrawerItem>
                     <DrawerItem name="Ref">{s.spec.ref.branch || s.spec.ref.tag}</DrawerItem>
                     <DrawerItem name="Interval">{s.spec.interval}</DrawerItem>
-                    <DrawerItem name="Status">{s.status.conditions.find((c: any) => c.type === 'Ready').message}</DrawerItem>
+                    <DrawerItem name="Status">{s.status.conditions?.find((c: any) => c.type === 'Ready').message}</DrawerItem>
                 </article>
                 </div>))
                 }
@@ -293,7 +293,7 @@ export class FluxCDDashboard extends React.Component<{ extension: Renderer.LensE
                     <DrawerItem name="Type">{s.kind}</DrawerItem>
                     <DrawerItem name="URL">{s.spec.url}</DrawerItem>
                     <DrawerItem name="Interval">{s.spec.interval}</DrawerItem>
-                    <DrawerItem name="Status">{s.status.conditions.find((c: any) => c.type === 'Ready').message}</DrawerItem>
+                    <DrawerItem name="Status">{s.status.conditions?.find((c: any) => c.type === 'Ready').message}</DrawerItem>
                 </article>
                 </div>))
                 }
@@ -306,7 +306,7 @@ export class FluxCDDashboard extends React.Component<{ extension: Renderer.LensE
                     <DrawerItem name="Chart">{s.spec.chart}</DrawerItem>
                     <DrawerItem name="Version">{s.spec.version}</DrawerItem>
                     <DrawerItem name="Interval">{s.spec.interval}</DrawerItem>
-                    <DrawerItem name="Status">{s.status.conditions.find((c: any) => c.type === 'Ready').message}</DrawerItem>
+                    <DrawerItem name="Status">{s.status.conditions?.find((c: any) => c.type === 'Ready').message}</DrawerItem>
                 </article>
                 </div>))
                 }
@@ -318,7 +318,7 @@ export class FluxCDDashboard extends React.Component<{ extension: Renderer.LensE
                     <DrawerItem name="Type">{s.kind}</DrawerItem>
                     <DrawerItem name="URL">{s.spec.url}</DrawerItem>
                     <DrawerItem name="Interval">{s.spec.interval}</DrawerItem>
-                    <DrawerItem name="Status">{s.status.conditions.find((c: any) => c.type === 'Ready').message}</DrawerItem>
+                    <DrawerItem name="Status">{s.status.conditions?.find((c: any) => c.type === 'Ready').message}</DrawerItem>
                 </article>
                 </div>))
                 }
